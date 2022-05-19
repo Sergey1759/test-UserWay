@@ -1,0 +1,83 @@
+.popupChangeAlt{
+    background-color: rgba(107,119,141,1);
+    max-width: min-content;
+    min-width: 250px;
+    font-size: 20px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
+    color: #e7c944;
+    border-left: 3px solid #f6ec2a;
+    border-top: 3px solid #f6ec2a;
+    border-radius: 10px 0px 0px 0px;
+    font-family: Arial;
+    z-index: 999;
+}
+
+.popupChangeAlt .btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 15px;
+}
+
+.popupChangeAlt input{
+    width: 100%;
+    font-size: 20px;
+    background-color: rgba(107,119,141,1);
+    color: #e7c944;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    outline: #e7c944 ;
+    box-sizing: border-box;
+    border: 2px solid rgba(255, 225, 108, 0.42);
+    transition: 0.5s;
+}
+.popupChangeAlt input:focus{
+    transition: 0.5s;
+    border: 2px solid rgba(255, 225, 108, 1);
+    outline: #e7c944 ;
+    background-color: rgba(107,119,141,1);
+}
+
+.popupChangeAlt button{
+    color: #e7c944;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: rgba(240, 248, 255, 0.42);
+    border: #e7c944;
+    border-radius: 5px;
+}
+.popupChangeAlt button{
+    color: rgba(231, 201, 68, 0.75);
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(240, 248, 255, 0);
+    border: #e7c944;
+    border-radius: 5px;
+    transition: 0.5s;
+    border: 2px solid rgba(231, 201, 68, 0);
+    outline: #e7c944 ;
+}
+
+.popupChangeAlt button:focus{
+    color: #e7c944;
+    background-color: rgba(240, 248, 255, 1);
+    border: 2px solid #e7c944;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.btns button:hover{
+    cursor: pointer;
+
+}
+.imageActive{
+    border: 5px solid #e7c944;
+    transform: scale(1.2);
+}
+
+.errorInput::-webkit-input-placeholder {
+    color: #f89a5f
+}
