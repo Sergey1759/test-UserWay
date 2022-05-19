@@ -70,7 +70,6 @@
                     input.classList.add('errorInput');
                 }
                 document.querySelector('#newAlt').addEventListener('focus',(e)=> {
-                    console.log('focus');
                     e.target.placeholder = '';
                     clearTimeout(myTimer);
                 });
@@ -104,8 +103,7 @@
             const {filtered, imagesSrc} = findStoredImages();
             if(filtered.length > 0) {
                 filtered.forEach(el => el.alt = imagesSrc[el.src]);
-                console.log(filtered)
-            }    
+            }
         } catch (e) {
             console.log(e);
         }
