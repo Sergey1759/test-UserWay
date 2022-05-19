@@ -33,6 +33,7 @@
                 set.remove();
                 set.removeEventListener("mouseenter", mouseEnterListener);
                 set.removeEventListener('mouseleave',mouseLeaveListener);
+                event.target.classList.remove('imageActive');
                 clearTimeout(myTimer);
             },5000,div);
 
@@ -47,8 +48,9 @@
                     set.remove();
                     set.removeEventListener("mouseenter", mouseEnterListener);
                     set.removeEventListener('mouseleave',mouseLeaveListener);
-                    clearTimeout(myTimer);
                     event.target.classList.remove('imageActive');
+                    console.log('leave')
+                    clearTimeout(myTimer);
                 },5000,div);
             }
 
