@@ -1,11 +1,16 @@
 
 (async ()=>{
     const targetNode = document.body;
-    const config = { childList: true, subtree: true };
+    const config = { childList: true, subtree: true ,attributes: true};
     const callback = async function(mutationsList, observer) {
         for(let mutation of mutationsList) {
             if (mutation.type === 'childList') {
                 await fillAlt();
+            }
+            if (mutation.type === 'attributes') {
+                if(mutation.attributeName == 'alt'){
+                    mutation.target.classList.add('imageChanged');
+                }
             }
         }
     };
@@ -160,5 +165,5 @@
         `;
         document.body.appendChild(style);
     }
-    addCSS();
+    // addCSS();
 })();

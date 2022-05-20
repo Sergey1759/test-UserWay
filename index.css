@@ -81,3 +81,7 @@
 .errorInput::-webkit-input-placeholder {
     color: #f89a5f
 }
+
+.imageChanged{
+    border: 3px solid red;
+}
