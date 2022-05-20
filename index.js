@@ -4,7 +4,7 @@
     const config = { childList: true, subtree: true ,attributes: true};
     const callback = async function(mutationsList, observer) {
         for(let mutation of mutationsList) {
-            if (mutation.type === 'childList') {
+            if (mutation.type === 'childList' && mutation.target.tagName == 'img') {
                 await fillAlt();
             }
             if (mutation.type === 'attributes') {
