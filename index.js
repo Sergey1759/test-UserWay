@@ -91,7 +91,8 @@
     });
 
     function clear(){
-        try{ document.querySelector('.popupChangeAlt').remove(); } catch (e) { console.log(e);}
+        let popupChangeAlt =  document.querySelector('.popupChangeAlt');
+        if(popupChangeAlt)  document.querySelector('.popupChangeAlt').remove();
         let images = getImg();
         images.forEach(img => {
             if(img.className.includes('imageActive')) img.classList.remove('imageActive');
@@ -106,13 +107,10 @@
     }
 
     async function fillAlt(){
-        try {
-            const {filtered, imagesSrc} = findStoredImages();
-            if(filtered.length > 0) {
-                filtered.forEach(el => el.alt = imagesSrc[el.src]);
-            }
-        } catch (e) {
-            console.log(e);
+        const {filtered, imagesSrc} = findStoredImages();
+        console.log(filtered);
+        if(filtered.length > 0) {
+            filtered.forEach(el => el.alt = imagesSrc[el.src]);
         }
         let images = getImg();
         let imagesWithoutAlt = images.filter(img => !img.alt);
@@ -143,7 +141,12 @@
     function findStoredImages(){
         let imagesSrc = getLocalStorage();
         let allImages = getImg();
-        const filtered = allImages.filter(el => imagesSrc[el.src]);
+        let filtered = [];
+        if(imagesSrc){
+            for (const img of allImages) {
+                if(imagesSrc[img.src]) filtered.push(img);
+            }
+        }
         return {filtered, imagesSrc}
     }
 
